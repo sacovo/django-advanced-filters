@@ -50,6 +50,7 @@ class AdvancedFilter(models.Model):
         if not isinstance(value, Q):
             raise Exception('Must only be passed a Django (Q)uery object')
         s = QSerializer(base64=True)
+        print(value)
         self.b64_query = s.dumps(value)
 
     def list_fields(self):
