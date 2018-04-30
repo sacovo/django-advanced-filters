@@ -13,9 +13,14 @@
 	{# Add a link to the end of the tool items #}
 	{% if advanced_filters %}
 		<li class="afilters">
-			<a class="ajax-popup-link icons-object-tools-add-link" href="#advanced_filters" >{% trans "Advanced Filter" %}</a>{% if '_afilter' in request.GET %}<a class="edit-link" href="{% url 'admin:advanced_filters_advancedfilter_change' current_afilter %}" >{% trans "Edit" %}</a>
-			{% endif %}
-		</li>
+			<a class="ajax-popup-link icons-object-tools-add-link" href="#advanced_filters" >{% trans "Advanced Filter" %}</a>
+			</li>
+			{% if '_afilter' in request.GET %}
+			<li>
+			<a class="edit-link" href="{% url 'admin:advanced_filters_advancedfilter_change' current_afilter %}" >{% trans "Edit" %}</a>
+			</li>		
+	{% endif %}
+
 	{% endif %}
 {% endblock object-tools-items %}
 
