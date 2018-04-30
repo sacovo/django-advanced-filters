@@ -126,7 +126,7 @@ class QSerializer(object):
 
     def loads(self, string, raw=False):
         if self.b64_enabled:
-            d = json.loads(base64.b64decode(string))
+            d = json.loads(base64.b64decode(eval(string)))
         else:
             d = json.loads(string)
         if raw:
